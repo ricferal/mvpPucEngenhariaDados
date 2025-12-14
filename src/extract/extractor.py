@@ -6,6 +6,7 @@ Responsible for extracting data from various sources
 import pandas as pd
 import requests
 import logging
+import json
 from typing import Dict, Any, Optional
 import os
 
@@ -82,7 +83,6 @@ class DataExtractor:
         try:
             logger.info(f"Extracting data from JSON: {file_path}")
             with open(file_path, 'r', encoding='utf-8') as f:
-                import json
                 data = json.load(f)
             logger.info("Successfully extracted data from JSON")
             return data

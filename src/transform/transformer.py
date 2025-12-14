@@ -6,6 +6,7 @@ Responsible for transforming and cleaning data
 import pandas as pd
 import numpy as np
 import logging
+import os
 from typing import Dict, List, Any, Optional, Callable
 
 logging.basicConfig(level=logging.INFO)
@@ -183,7 +184,6 @@ class DataTransformer:
             Path to the saved file
         """
         try:
-            import os
             os.makedirs(output_dir, exist_ok=True)
             output_path = os.path.join(output_dir, filename)
             data.to_csv(output_path, index=False)
