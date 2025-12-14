@@ -1,0 +1,34 @@
+# ETL Pipeline Configuration
+
+# Extract Configuration
+extract:
+  source_type: csv
+  encoding: utf-8
+
+# Transform Configuration
+transform:
+  remove_duplicates: true
+  missing_values:
+    strategy: drop  # Options: drop, fill, ffill, bfill
+    fill_value: null
+  
+  # Normalization
+  normalize:
+    enabled: false
+    columns: []
+
+# Load Configuration
+load:
+  output_format: csv  # Options: csv, json, parquet, database
+  output_dir: data/processed
+  
+  # Database configuration (if using database load)
+  database:
+    enabled: false
+    connection_string: "postgresql://user:password@localhost:5432/dbname"
+    table_name: "processed_data"
+
+# Logging Configuration
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
