@@ -70,9 +70,9 @@ class DataTransformer:
             elif strategy == 'fill':
                 df_clean = df.fillna(fill_value)
             elif strategy == 'ffill':
-                df_clean = df.fillna(method='ffill')
+                df_clean = df.ffill()
             elif strategy == 'bfill':
-                df_clean = df.fillna(method='bfill')
+                df_clean = df.bfill()
             else:
                 raise ValueError(f"Unknown strategy: {strategy}")
             
