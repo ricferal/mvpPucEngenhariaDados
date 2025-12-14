@@ -9,20 +9,23 @@ from datetime import datetime, timedelta
 import random
 import os
 
-np.random.seed(42)
-random.seed(42)
 
-
-def generate_sample_sales_data(num_rows: int = 1000) -> pd.DataFrame:
+def generate_sample_sales_data(num_rows: int = 1000, random_seed: int = None) -> pd.DataFrame:
     """
     Generate sample sales data
     
     Args:
         num_rows: Number of rows to generate
+        random_seed: Random seed for reproducibility (None for random data)
         
     Returns:
         DataFrame with sample sales data
     """
+    # Set random seed if provided
+    if random_seed is not None:
+        np.random.seed(random_seed)
+        random.seed(random_seed)
+    
     # Generate dates
     start_date = datetime(2023, 1, 1)
     dates = [start_date + timedelta(days=random.randint(0, 365)) for _ in range(num_rows)]
@@ -61,17 +64,18 @@ def generate_sample_sales_data(num_rows: int = 1000) -> pd.DataFrame:
     return df
 
 
-def save_sample_data(output_dir: str = "data/raw"):
+def save_sample_data(output_dir: str = "data/raw", random_seed: int = 42):
     """
     Generate and save sample data
     
     Args:
         output_dir: Directory to save the sample data
+        random_seed: Random seed for reproducibility (None for random data)
     """
     os.makedirs(output_dir, exist_ok=True)
     
     # Generate sales data
-    sales_data = generate_sample_sales_data(1000)
+    sales_data = generate_sample_sales_data(1000, random_seed=random_seed)
     sales_file = os.path.join(output_dir, "sample_data.csv")
     sales_data.to_csv(sales_file, index=False)
     print(f"Sample sales data saved to: {sales_file}")

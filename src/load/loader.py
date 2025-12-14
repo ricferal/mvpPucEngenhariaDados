@@ -57,7 +57,9 @@ class DataLoader:
         """
         try:
             logger.info(f"Loading data to CSV: {file_path}")
-            os.makedirs(os.path.dirname(file_path), exist_ok=True)
+            dir_path = os.path.dirname(file_path)
+            if dir_path:
+                os.makedirs(dir_path, exist_ok=True)
             
             if mode == 'a' and os.path.exists(file_path):
                 df.to_csv(file_path, mode='a', header=False, index=False)
@@ -105,7 +107,9 @@ class DataLoader:
         """
         try:
             logger.info(f"Loading data to JSON: {file_path}")
-            os.makedirs(os.path.dirname(file_path), exist_ok=True)
+            dir_path = os.path.dirname(file_path)
+            if dir_path:
+                os.makedirs(dir_path, exist_ok=True)
             df.to_json(file_path, orient=orient, indent=2)
             logger.info(f"Successfully loaded {len(df)} rows to JSON")
             return file_path
@@ -149,7 +153,9 @@ class DataLoader:
         """
         try:
             logger.info(f"Loading data to Parquet: {file_path}")
-            os.makedirs(os.path.dirname(file_path), exist_ok=True)
+            dir_path = os.path.dirname(file_path)
+            if dir_path:
+                os.makedirs(dir_path, exist_ok=True)
             df.to_parquet(file_path, index=False)
             logger.info(f"Successfully loaded {len(df)} rows to Parquet")
             return file_path
