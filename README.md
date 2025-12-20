@@ -293,27 +293,6 @@ kaggle
 
 ---
 
-## 🔧 Customizações e Extensões
-
-O projeto está estruturado de forma **modular e extensível**, permitindo:
-
-- ✅ Integração com outras fontes de dados
-- ✅ Criação de novos KPIs e métricas
-- ✅ Exportação para Power BI, Tableau, Looker
-- ✅ Implementação de pipelines de ML (previsão de vendas)
-- ✅ Automatização via Databricks Jobs
-- ✅ Integração com alertas e notificações
-
----
-
-## 📚 Observações
-
-- O notebook está estruturado para ser **didático e modular**, facilitando adaptações para outros projetos
-- Todas as consultas SQL e transformações seguem **boas práticas de engenharia de dados**
-- Os resultados podem ser exportados para dashboards externos (Power BI, Tableau) conforme necessidade
-- O código está otimizado para performance com **Delta Lake** e **particionamento inteligente**
-
----
 
 ## 🤝 Contribuições
 
