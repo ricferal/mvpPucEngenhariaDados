@@ -27,7 +27,7 @@ Este notebook implementa um **pipeline completo de dados** para análise de vend
 | `catalogo_de_dados_tabelas_amazon.ipynb` | Catálogo de dados com DER das tabelas |
 | `Consultas_SQL_Avancadas_Amazon.ipynb` | 16 consultas SQL especializadas |
 | `Amazon.csv` | Dataset fonte (Kaggle) |
-| `requisitos.md` | Documentação de requisitos do projeto |
+
 
 ---
 
