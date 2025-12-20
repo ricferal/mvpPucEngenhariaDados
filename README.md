@@ -338,6 +338,4 @@ Este projeto é de uso acadêmico e educacional.
 
 ---
 
-**⭐ Se este projeto foi útil, considere dar uma estrela no repositório!**
 
-*Última atualização: 19 de Dezembro de 2025*
